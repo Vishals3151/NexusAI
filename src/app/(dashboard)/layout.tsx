@@ -9,7 +9,7 @@ const Layout = ({ children }: Props) => {
   return (
     <SidebarProvider>
       <DashBoardSidebar />
-      <main className="felx flex-col h-screen w-screen bg-muted">
+      <main className="flex flex-col h-screen w-screen bg-muted">
         {children}
       </main>
     </SidebarProvider>
