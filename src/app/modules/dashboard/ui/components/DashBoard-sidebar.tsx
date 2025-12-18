@@ -52,7 +52,7 @@ export const DashBoardSidebar = () => {
         </Link>
       </SidebarHeader>
       <div className="px-4 py-2">
-        <Separator className="opacity-10 text-[#5D6D68]" />
+        <Separator className="opacity-10 text-[#5D6B68]" />
       </div>
       <SidebarContent>
         <SidebarGroup>
