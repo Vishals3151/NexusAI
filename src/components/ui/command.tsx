@@ -72,12 +72,14 @@ function CommandResponsiveDialog({
   title = "Command Palette",
   description = "Search for a command to run...",
   children,
+  shouldFilter = true,
   className,
   showCloseButton = true,
   ...props
 }: React.ComponentProps<typeof Dialog> & {
   title?: string;
   description?: string;
+  shouldFilter?: boolean;
   className?: string;
   showCloseButton?: boolean;
 }) {
@@ -91,7 +93,7 @@ function CommandResponsiveDialog({
             <DrawerTitle>{title}</DrawerTitle>
             <DrawerDescription>{description}</DrawerDescription>
           </DrawerHeader>
-          <Command className="...">{children}</Command>
+          <Command shouldFilter={shouldFilter} className="...">{children}</Command>
         </DrawerContent>
       </Drawer>
     );
@@ -107,7 +109,7 @@ function CommandResponsiveDialog({
         className={cn("overflow-hidden p-0", className)}
         showCloseButton={showCloseButton}
       >
-        <Command className="...">{children}</Command>
+        <Command shouldFilter={shouldFilter} className="...">{children}</Command>
       </DialogContent>
     </Dialog>
   );
