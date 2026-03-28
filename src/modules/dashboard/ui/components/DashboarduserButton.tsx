@@ -19,7 +19,6 @@ import {
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { GeneratedAvatar } from "@/components/generated-avatar";
 import {
-  AwardIcon,
   ChevronDownIcon,
   CreditCardIcon,
   LogOutIcon,

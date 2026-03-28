@@ -9,7 +9,7 @@ import { generateAvatarUri } from "@/lib/avatar";
 export const MockAgentController = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isListening, setIsListening] = useState(false);
-  const [latestMessage, setLatestMessage] = useState<string>("");
+  const [, setLatestMessage] = useState<string>("");
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const recognitionRef = useRef<any>(null);
@@ -254,6 +254,7 @@ export const MockAgentController = () => {
 
       <div className={`relative size-32 md:size-48 rounded-full overflow-hidden bg-white/10 border-4 shadow-2xl z-10 transition-colors ${isSpeaking ? 'border-blue-500' : 'border-white/5'}`}>
         {meeting?.agent && (
+          // eslint-disable-next-line @next/next/no-img-element
           <img src={agentImage} alt={agentName} className="object-cover w-full h-full" />
         )}
       </div>

@@ -1,7 +1,5 @@
 import { nanoid } from "nanoid";
 import { pgTable, text, timestamp, boolean, pgEnum } from "drizzle-orm/pg-core";
-import { id } from "date-fns/locale";
-import { create } from "domain";
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),

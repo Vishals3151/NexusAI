@@ -39,8 +39,8 @@ export async function POST(req: Request) {
     return NextResponse.json({
       summary: data.choices[0]?.message?.content || "Could not generate summary."
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Groq Summary Error:", error);
-    return NextResponse.json({ error: "Failed to summarize request", details: error?.message || String(error) }, { status: 500 });
+    return NextResponse.json({ error: "Failed to summarize request", details: (error as Error)?.message || String(error) }, { status: 500 });
   }
 }

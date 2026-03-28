@@ -42,8 +42,8 @@ export async function POST(req: Request) {
     return NextResponse.json({
       text: data.choices[0]?.message?.content || "I'm sorry, I didn't catch that."
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Groq Endpoint Error:", error);
-    return NextResponse.json({ error: "Failed to process request", details: error?.message || String(error) }, { status: 500 });
+    return NextResponse.json({ error: "Failed to process request", details: (error as Error)?.message || String(error) }, { status: 500 });
   }
 }

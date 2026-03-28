@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 import {
   Sidebar,
-  SidebarProvider,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
@@ -12,7 +11,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarSeparator,
 } from "@/components/ui/sidebar";
 import { VideoIcon, BotIcon, StarIcon } from "lucide-react";
 import Link from "next/link";

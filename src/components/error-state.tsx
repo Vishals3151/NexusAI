@@ -1,8 +1,8 @@
 import { AlertCircleIcon } from "lucide-react";
 
 interface Props {
-  title: String;
-  description: String;
+  title: string;
+  description: string;
 }
 
 export const ErrorState = ({ title, description }: Props) => {
