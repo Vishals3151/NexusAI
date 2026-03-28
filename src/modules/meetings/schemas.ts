@@ -5,6 +5,13 @@ export const meetingsInsertSchema = z.object({
   agentId: z.string().min(1, { message: "Agent is required" }),
 });
 
-export const meetingsUpdateSchema = meetingsInsertSchema.extend({
+export const meetingsUpdateSchema = z.object({
   id: z.string().min(1, { message: "Id is required" }),
+  name: z.string().optional(),
+  agentId: z.string().optional(),
+  status: z.string().optional(),
+  summary: z.string().optional(),
+  transcriptUrl: z.string().optional(),
+  endedAt: z.union([z.string(), z.date()]).optional(),
+  startedAt: z.union([z.string(), z.date()]).optional(),
 });
