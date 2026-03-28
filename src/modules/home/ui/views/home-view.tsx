@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { CalendarIcon, MicIcon, UsersIcon, ClockIcon, ArrowRightIcon, BrainCircuitIcon, BotIcon, FileTextIcon } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { CalendarIcon, MicIcon, UsersIcon, ClockIcon, ArrowRightIcon, BrainCircuitIcon, BotIcon, FileTextIcon, Loader2 } from "lucide-react";
 
 import { authClient } from "@/lib/auth-client";
 import { useTRPC } from "@/trpc/client";
@@ -21,16 +21,24 @@ export const HomeView = () => {
   const { data: session } = authClient.useSession();
   const [isNewMeetingOpen, setIsNewMeetingOpen] = useState(false);
 
-  const { data: stats } = useSuspenseQuery(
+  const { data: stats, isLoading: isStatsLoading } = useQuery(
     trpc.meetings.getStats.queryOptions()
   );
 
-  const { data: recentMeetings } = useSuspenseQuery(
+  const { data: recentMeetings, isLoading: isMeetingsLoading } = useQuery(
     trpc.meetings.getMany.queryOptions({
       page: 1,
       pageSize: 5,
     })
   );
+
+  if (isStatsLoading || isMeetingsLoading || !stats || !recentMeetings) {
+    return (
+      <div className="flex-1 flex items-center justify-center min-h-[50vh]">
+        <Loader2 className="size-8 animate-spin text-muted-foreground" />
+      </div>
+    );
+  }
 
   return (
     <div className="flex-1 pb-4 px-4 md:px-8 flex flex-col gap-y-8 animate-in fade-in duration-500 max-w-7xl mx-auto w-full">
