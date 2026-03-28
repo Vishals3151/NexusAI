@@ -1,0 +1,76 @@
+
+> meetai@0.1.0 build
+> next build
+
+   ▲ Next.js 15.3.2
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ⚠ Compiled with warnings in 5.0s
+
+./node_modules/@opentelemetry/instrumentation-winston/build/src/instrumentation.js
+Module not found: Can't resolve '@opentelemetry/winston-transport' in 'C:\Users\Vishal\Music\NexusAi Project\NexusAi\node_modules\@opentelemetry\instrumentation-winston\build\src'
+
+Import trace for requested module:
+./node_modules/@opentelemetry/instrumentation-winston/build/src/instrumentation.js
+./node_modules/@opentelemetry/instrumentation-winston/build/src/index.js
+./node_modules/@opentelemetry/auto-instrumentations-node/build/src/utils.js
+./node_modules/@opentelemetry/auto-instrumentations-node/build/src/index.js
+./node_modules/inngest/components/execution/otel/util.js
+./node_modules/inngest/components/execution/otel/middleware.js
+./node_modules/inngest/experimental.js
+./node_modules/@inngest/agent-kit/dist/chunk-BSWKEFTT.js
+./node_modules/@inngest/agent-kit/dist/index.js
+./src/inngest/functions.ts
+./src/app/api/inngest/route.ts
+
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/index.js
+./node_modules/@traceloop/instrumentation-anthropic/dist/index.mjs
+./node_modules/inngest/components/execution/otel/util.js
+./node_modules/inngest/components/execution/otel/middleware.js
+./node_modules/inngest/experimental.js
+./node_modules/@inngest/agent-kit/dist/chunk-BSWKEFTT.js
+./node_modules/@inngest/agent-kit/dist/index.js
+./src/inngest/functions.ts
+./src/app/api/inngest/route.ts
+
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/require-in-the-middle/index.js
+Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+
+Import trace for requested module:
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/require-in-the-middle/index.js
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
+./node_modules/@traceloop/instrumentation-anthropic/node_modules/@opentelemetry/instrumentation/build/esm/index.js
+./node_modules/@traceloop/instrumentation-anthropic/dist/index.mjs
+./node_modules/inngest/components/execution/otel/util.js
+./node_modules/inngest/components/execution/otel/middleware.js
+./node_modules/inngest/experimental.js
+./node_modules/@inngest/agent-kit/dist/chunk-BSWKEFTT.js
+./node_modules/@inngest/agent-kit/dist/index.js
+./src/inngest/functions.ts
+./src/app/api/inngest/route.ts
+
+ ✓ Compiled successfully in 7.0s
+   Linting and checking validity of types ...
+Failed to compile.
+
+./src/inngest/functions.ts:40:3
+Type error: Expected 2 arguments, but got 3.
+
+[0m [90m 38 |[39m   { id[33m:[39m [32m"meetings/processing"[39m }[33m,[39m[0m
+[0m [90m 39 |[39m   { event[33m:[39m [32m"meetings/processing"[39m }[33m,[39m[0m
+[0m[31m[1m>[22m[39m[90m 40 |[39m   [36masync[39m ({ event[33m,[39m step }) [33m=>[39m {[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 41 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m step[33m.[39mfetch(event[33m.[39mdata[33m.[39mtranscriptUrl)[33m;[39m[0m
+[0m [90m 42 |[39m[0m
+[0m [90m 43 |[39m     [36mconst[39m transcript [33m=[39m [36mawait[39m step[33m.[39mrun([32m"parse-transcript"[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+Next.js build worker exited with code: 1 and signal: null

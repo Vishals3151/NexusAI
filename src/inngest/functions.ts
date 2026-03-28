@@ -31,12 +31,19 @@ Example:
 - Feature X automatically does Y
 - Mention of integration with Z
   `.trim(),
-  model: openai({ model: "gpt-4o", apiKey: process.env.OPENAI_API_KEY }),
+  // Using Groq for free LLM inference instead of paid OpenAI
+  model: openai({ 
+    model: "llama-3.1-8b-instant", 
+    apiKey: process.env.GROQ_API_KEY || "dummy",
+    baseUrl: "https://api.groq.com/openai/v1"
+  }),
 });
 
 export const meetingsProcessing = inngest.createFunction(
-  { id: "meetings/processing" },
-  { event: "meetings/processing" },
+  { 
+    id: "meetings/processing",
+    triggers: [{ event: "meetings/processing" }]
+  },
   async ({ event, step }) => {
     const response = await step.fetch(event.data.transcriptUrl);
 

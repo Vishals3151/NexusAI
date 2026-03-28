@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { DashBoardSidebar } from "@/modules/dashboard/ui/components/DashBoard-sidebar";
 import { DashBoardNavbar } from "@/modules/dashboard/ui/components/Dashboard-navbar";
