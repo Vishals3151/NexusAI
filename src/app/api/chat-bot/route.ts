@@ -49,7 +49,7 @@ User will ask you questions about the meeting. Please answer based on the summar
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama-3.1-8b-instant",
+        model: "openai/gpt-oss-20b",
         messages: mergedMessages,
         temperature: 0.7,
         max_tokens: 300
