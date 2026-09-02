@@ -33,7 +33,7 @@ Example:
   `.trim(),
   // Using Groq for free LLM inference instead of paid OpenAI
   model: openai({ 
-    model: "llama-3.1-8b-instant", 
+    model: "openai/gpt-oss-20b", 
     apiKey: process.env.GROQ_API_KEY || "dummy",
     baseUrl: "https://api.groq.com/openai/v1"
   }),
